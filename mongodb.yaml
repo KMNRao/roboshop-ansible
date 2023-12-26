@@ -6,14 +6,14 @@
     ansible.builtin.copy:
       sec: mongodb.repo
       dest: /etc/yum.repo.d/momgodb.repo
-      
+
   - name: install mangodb
     ansible.builtin.package:
        name: mogodb-org
        state: present
 
   - name: start and enable mogodb
-    ansible.builtin.services:
+    ansible.builtin.service:
        name: mongod
        state: started
        enabled: yes
@@ -25,6 +25,6 @@
       replace: '0.0.0.0'
 
   - name: start and enable mongodb
-    ansible.builtin.services:
+    ansible.builtin.service:
       name: mongod
       state: restart
