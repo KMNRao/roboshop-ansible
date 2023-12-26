@@ -9,7 +9,7 @@
 
   - name: install mangodb
     ansible.builtin.package:
-       name: mogodb-org
+       name: mongodb-org
        state: present
 
   - name: start and enable mogodb
