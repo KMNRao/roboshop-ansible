@@ -62,9 +62,9 @@
     ansible.builtin.command: mongo --host mongodb.mohana.cloud --quiet --eval 'db =db.getSiblingDB("catalogue"); db.products.count()'
     register: product_count
 
-  - name: print the count
-    ansible.builtin.debug:
-      msg: "product count: {{product_count}}"
+  #- name: print the count
+  #  ansible.builtin.debug:
+  #    msg: "product count: {{product_count}}"
 
   - name: load catalogue data
     ansible.builtin.command: mongo --host mongodb.mohana.cloud < /app/schema/catalogue.js
