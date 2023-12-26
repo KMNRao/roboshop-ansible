@@ -5,8 +5,7 @@
   - name: copy mongodb repo
     ansible.builtin.copy:
       sec: mongodb.repo
-      dest: /etc/yum.repo
-      .d/momgodb.repo
+      dest: /etc/yum.repo.d/momgodb.repo
   - name: install mangodb
     ansible.builtin.package:
        name: mogodb-org
@@ -26,4 +25,3 @@
     ansible.builtin.services:
       name: mongod
       state: restart
-          
